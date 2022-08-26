@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("partials/head.ejs")%>
+<body>
+    <%- include('partials/nav.ejs') %>
+    <div class="containers">
+        <h1><%= recipe.name %> Recipe</h1>
+        <div class="foodimg">
+            <img src="<%= recipe.img%>" alt="">
+        </div>
+        <div class="content">
+            <h3>Required ingredients</h3>
+            <% for(var i =0; i<=recipe.ingredient.length -1; i++) { %> 
+                <ul>
+                    <li><%= recipe.ingredient[i] %></li>
+                </ul>
+        <% } %>
+           
+          <h3>steps</h3>
+          <% for(let i =0; i<=recipe.step.length-1; i++) { %>
+            <p><%= recipe.step[i] %></p>
+         <% } %>
+
+         <h3>Time To cook</h3>
+         <p><%= recipe.time %></p>
+        </div>
+    </div>
+</body>
+</html>
+
+
